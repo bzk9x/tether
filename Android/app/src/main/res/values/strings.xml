@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Tether</string>
+    <string name="beautifully_designed_privacy_focused_and_packed_with_features_we_care_about_your_experience_not_your_data">Beautifully designed, privacy-focused, and packed with features. We care about your experience, not your data.</string>
+    <string name="continue_xml">Continue</string>
 </resources>
