@@ -6,6 +6,7 @@ import android.text.SpannableString
 import android.text.Spanned
 import android.text.style.ForegroundColorSpan
 import android.text.style.TypefaceSpan
+import android.util.TypedValue
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.annotation.RequiresApi
@@ -14,8 +15,6 @@ import androidx.core.content.res.ResourcesCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
-import androidx.core.view.WindowInsetsControllerCompat
-import androidx.core.graphics.toColorInt
 
 class OnboardingActivity : AppCompatActivity() {
     @RequiresApi(Build.VERSION_CODES.P)
@@ -26,14 +25,6 @@ class OnboardingActivity : AppCompatActivity() {
 
         WindowCompat.setDecorFitsSystemWindows(window, false)
 
-        val insetsController = WindowInsetsControllerCompat(window, window.decorView)
-        insetsController.isAppearanceLightStatusBars = false
-
-        window.setFlags(
-            android.view.WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
-            android.view.WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
-        )
-
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, 0, systemBars.right, systemBars.bottom)
@@ -42,15 +33,19 @@ class OnboardingActivity : AppCompatActivity() {
 
         val textView: TextView = findViewById(R.id.onboarding_message)
 
-        val text = "Glad you’re here, let’s start fresh"
+        val text = "Glad you're here, let's start fresh"
         val spannable = SpannableString(text)
 
         val lastWord = "fresh"
         val start = text.lastIndexOf(lastWord)
         val end = start + lastWord.length
 
+        val typedValue = TypedValue()
+        theme.resolveAttribute(android.R.attr.colorPrimary, typedValue, true)
+        val colorPrimary = typedValue.data
+
         spannable.setSpan(
-            ForegroundColorSpan("#B088FF".toColorInt()),
+            ForegroundColorSpan(colorPrimary),
             start,
             end,
             Spanned.SPAN_EXCLUSIVE_EXCLUSIVE

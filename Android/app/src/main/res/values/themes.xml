@@ -2,18 +2,18 @@
     <!-- Base application theme. -->
     <style name="Theme.Tether" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">#FFB088FF</item>
-        <item name="colorPrimaryVariant">#FFB088FF</item>
-        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorPrimary">#FF8B52FD</item>
+        <item name="colorPrimaryVariant">#FF533197</item>
+        <item name="colorOnPrimary">#FFEDEDEE</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">#FFB088FF</item>
-        <item name="colorSecondaryVariant">#FFB088FF</item>
-        <item name="colorOnSecondary">@color/white</item>
+        <item name="colorSecondary">#FF8B52FD</item>
+        <item name="colorSecondaryVariant">#FF8B52FD</item>
+        <item name="colorOnSecondary">#FFEDEDEE</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor">#FF2D2C2F</item>
+        <item name="android:statusBarColor">#FFEDEDEE</item>
         <!-- Customize your theme here. -->
 
-        <item name="android:windowBackground">#FF2D2C2F</item>
-        <item name="android:textColor">@color/white</item>
+        <item name="android:windowBackground">#FFEDEDEE</item>
+        <item name="android:textColor">#FF2D2C2F</item>
     </style>
 </resources>

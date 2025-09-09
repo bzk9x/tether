@@ -6,9 +6,7 @@ import android.os.Handler
 import android.os.Looper
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.view.ViewCompat
-import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.content.edit
 
@@ -22,9 +20,6 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-
-        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-        WindowCompat.getInsetsController(window, window.decorView).isAppearanceLightStatusBars = true
 
         val prefs = this.getSharedPreferences("prefs", MODE_PRIVATE)
         val isFirstTime = prefs.getBoolean("is_first_time", true)
